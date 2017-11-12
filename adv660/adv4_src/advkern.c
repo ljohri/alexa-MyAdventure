@@ -364,19 +364,82 @@ printf ("Data file does not belong to this program!\n"); return (1); } i4
 i6 <= q0; i6++) s4 ('s', i6, e8); for (i6 = d0; i6 <= w7; i6++) s4 ('s',
 i6, y9); if (u0 && *u0) if ((log_file = fopen (u0, "a+")) == NULL) (void)
 printf ("(Sorry, unable to open log file...)\n"); else (void) fprintf (log_file,
-"\n<%s: random seed %lu>\n", TITLE, e2); return (0); } main (argc, argv)
-int argc; char *argv []; { if (argc > 1) while (--argc) { if ((e2 = atoi
-(argv [argc])) == 0); u0 = argv [argc]; } if (e2 == 0) (void) time (&e2);
-e2 %= 32768L; if (q7 () != 0) { (void) printf ("Sorry, unable to set up the world.\n");
-return (1); } x7 (); (void) setjmp (n0); if (x4) { return (0); if (log_file)
-(void) fclose (log_file); } while (1) u6 (); } u3 () { short d10; char p7
-(); r3 = 0; c4 = c1; while (1) { i4 [r3] = NULL; if ((z0 [r3] = p7 ()) ==
-'\n') return; i4 [r3] = c4; d10 = 0; while (*c4 != ' ' && *c4 != ',' &&
-*c4 != ';' && *c4 != '.' && *c4 != '\n') { if (*c4 >= 'A' && *c4 <= 'Z')
-*c4 += 'a' - 'A'; c4++; d10++; } t0 [r3] = d10; r3++; } } char p7 () { char
-w8; w8 = ' '; while(*c4 == ' ' || *c4 == ',' || *c4 == ';' || *c4 == '.'
-|| *c4 == '\n') { if (*c4 != ' ') { w8 = *c4; if (w8 == ';') w8 = '.'; }
-*c4 = '\0'; if (w8 == '\n') return w8; c4++; } return w8; } u4 (q5, k4,
+"\n<%s: random seed %lu>\n", TITLE, e2); return (0); } 
+main (argc, argv)
+int argc; char *argv []; 
+{ if (argc > 1) 
+    while (--argc) 
+    { 
+        if ((e2 = atoi(argv [argc])) == 0); 
+        u0 = argv [argc]; 
+    } 
+    if (e2 == 0) 
+        (void) time (&e2);
+    e2 %= 32768L; 
+    if (q7 () != 0) 
+    { 
+        (void) printf ("Sorry, unable to set up the world.\n"); 
+        return (1); 
+    } 
+    x7 ();
+    (void) setjmp (n0); 
+    if (x4) 
+    { 
+        return (0); 
+        if (log_file) 
+        (void) fclose (log_file); 
+    } 
+    while (1) 
+    u6 (); 
+} 
+u3 () 
+{ 
+    short d10; 
+    char p7(); 
+    r3 = 0; 
+    c4 = c1; 
+    while (1) 
+    { 
+        i4 [r3] = NULL; 
+        if ((z0 [r3] = p7 ()) == '\n') 
+        return; 
+        i4 [r3] = c4; 
+        d10 = 0; 
+        while (*c4 != ' ' && *c4 != ',' && *c4 != ';' && *c4 != '.' && *c4 != '\n') 
+        { 
+            if (*c4 >= 'A' && *c4 <= 'Z') 
+                *c4 += 'a' - 'A'; 
+                c4++; d10++; 
+        } 
+        t0 [r3] = d10; r3++; 
+    } 
+} 
+
+/***************************************************/
+/***************************************************/
+char p7 () 
+{ 
+    char w8; 
+    w8 = ' '; 
+    while(*c4 == ' ' || *c4 == ',' || *c4 == ';' || *c4 == '.' || *c4 == '\n') 
+    { 
+        if (*c4 != ' ') 
+        { 
+            w8 = *c4; 
+            if (w8 == ';') 
+                w8 = '.'; 
+        }
+    *c4 = '\0'; 
+    if (w8 == '\n') 
+        return w8; c4++; 
+    } 
+    return w8; 
+} 
+
+
+/***************************************************/
+/***************************************************/
+u4 (q5, k4,
 d7) int *q5; int *k4; long *d7; { int s6, x8, j9; int g9; int i14; long
 a5; char *b6; long d11; s6 = -1; j9 = d12 + 1; while (j9 > s6 + 1) { n2++;
 x8 = (s6 + j9) / 2; if (c6 (a5 = b12 [x8]) == '!') a5++; b6 = i4 [r3]; while
